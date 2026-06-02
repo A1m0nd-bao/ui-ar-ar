@@ -958,6 +958,129 @@
       font-weight: 700;
     }
 
+    .top-nav {
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .top-nav h3 {
+      margin: 0;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .save-text {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .profile-hero {
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      padding: 12px 0 18px;
+    }
+
+    .avatar.large {
+      width: 88px;
+      height: 88px;
+      border-radius: 30px;
+    }
+
+    .edit-avatar {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .form-group,
+    .settings-group {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(60, 60, 67, 0.08);
+      background: rgba(255,255,255,0.88);
+    }
+
+    .form-row,
+    .settings-row {
+      min-height: 50px;
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid rgba(60, 60, 67, 0.1);
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    .form-row {
+      grid-template-columns: 88px 1fr;
+    }
+
+    .settings-row {
+      grid-template-columns: 32px 1fr auto;
+      gap: 10px;
+    }
+
+    .form-row:last-child,
+    .settings-row:last-child {
+      border-bottom: 0;
+    }
+
+    .field-label {
+      color: #3a3a3c;
+      font-weight: 500;
+    }
+
+    .field-value {
+      color: var(--muted);
+      text-align: right;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .settings-symbol {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,122,255,0.14);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .settings-symbol.gray {
+      background: rgba(142,142,147,0.16);
+      color: #636366;
+    }
+
+    .settings-symbol.red {
+      background: rgba(255,59,48,0.14);
+      color: #ff3b30;
+    }
+
+    .chevron {
+      color: #c7c7cc;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .danger-text {
+      color: #ff3b30;
+    }
+
+    .page-note {
+      margin: 8px 4px 18px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
     .nav {
       position: absolute;
       left: 22px;
@@ -1223,6 +1346,141 @@
                 <div><strong>▣</strong>记录</div>
                 <div><strong>●</strong>我的</div>
               </nav>
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>4. 个人资料页</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="个人资料页手机线框">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>个人资料</h3>
+                <div class="save-text">完成</div>
+              </div>
+
+              <section class="profile-hero">
+                <div class="avatar large"></div>
+                <div class="edit-avatar">更换头像</div>
+              </section>
+
+              <div class="section-title">
+                <span>基础资料</span>
+              </div>
+              <section class="form-group">
+                <div class="form-row">
+                  <span class="field-label">昵称</span>
+                  <span class="field-value">用户名 / 昵称</span>
+                </div>
+                <div class="form-row">
+                  <span class="field-label">简介</span>
+                  <span class="field-value">一句话介绍自己</span>
+                </div>
+                <div class="form-row">
+                  <span class="field-label">地区</span>
+                  <span class="field-value">未设置</span>
+                </div>
+              </section>
+
+              <div class="section-title">
+                <span>AR 身份展示</span>
+              </div>
+              <section class="form-group">
+                <div class="form-row">
+                  <span class="field-label">默认角色</span>
+                  <span class="field-value">当前角色卡 ›</span>
+                </div>
+                <div class="form-row">
+                  <span class="field-label">AR 名片</span>
+                  <span class="field-value">昵称 + 头像</span>
+                </div>
+                <div class="form-row">
+                  <span class="field-label">展示内容</span>
+                  <span class="field-value">等级、成就、任务</span>
+                </div>
+              </section>
+              <p class="page-note">这个入口只处理“别人看到的我”和个人展示，不放账号安全、通知、缓存等系统设置。</p>
+
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>5. 设置页</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="设置页手机线框">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>设置</h3>
+                <div></div>
+              </div>
+
+              <div class="section-title">
+                <span>账号</span>
+              </div>
+              <section class="settings-group">
+                <div class="settings-row">
+                  <span class="settings-symbol">ID</span>
+                  <span>账号与安全</span>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-symbol gray">🔒</span>
+                  <span>隐私与可见性</span>
+                  <span class="chevron">›</span>
+                </div>
+              </section>
+
+              <div class="section-title">
+                <span>应用设置</span>
+              </div>
+              <section class="settings-group">
+                <div class="settings-row">
+                  <span class="settings-symbol">AR</span>
+                  <span>相机、相册与定位权限</span>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-symbol gray">铃</span>
+                  <span>通知设置</span>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-symbol gray">存</span>
+                  <span>缓存与存储</span>
+                  <span class="chevron">›</span>
+                </div>
+              </section>
+
+              <div class="section-title">
+                <span>其他</span>
+              </div>
+              <section class="settings-group">
+                <div class="settings-row">
+                  <span class="settings-symbol gray">?</span>
+                  <span>帮助与反馈</span>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-symbol gray">i</span>
+                  <span>关于 App</span>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-symbol red">!</span>
+                  <span class="danger-text">注销账号</span>
+                  <span class="chevron">›</span>
+                </div>
+              </section>
+              <p class="page-note">这个入口处理“App 怎么运行”和账号安全，不编辑昵称、头像、AR 名片等个人展示。</p>
+
               <div class="home-indicator dark"></div>
             </div>
           </div>
