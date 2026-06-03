@@ -1321,6 +1321,174 @@
       margin-bottom: 4px;
     }
 
+    .scene-preview-layout {
+      display: grid;
+      gap: 0;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+    .scene-thumb {
+      position: relative;
+      aspect-ratio: 1 / 1.48;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(60,60,67,0.08);
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.52), transparent 18%),
+        linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    .scene-thumb:nth-child(2n) {
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,0.48), transparent 18%),
+        linear-gradient(160deg, #b5b9c8 0%, #d6c7a7 52%, #8f9481 100%);
+    }
+
+    .scene-thumb:nth-child(3n) {
+      background:
+        radial-gradient(circle at 78% 30%, rgba(255,255,255,0.44), transparent 18%),
+        linear-gradient(160deg, #95a9bf 0%, #cdd9d2 48%, #837c6d 100%);
+    }
+
+    .scene-thumb::before {
+      content: "";
+      position: absolute;
+      left: -24%;
+      right: -24%;
+      bottom: 18%;
+      height: 34%;
+      transform: rotate(-7deg);
+      background: rgba(28,28,30,0.12);
+      border-top: 1px solid rgba(255,255,255,0.42);
+    }
+
+    .scene-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, transparent 34%, rgba(0,0,0,0.46) 100%);
+    }
+
+    .scene-thumb-place {
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      z-index: 2;
+      max-width: calc(100% - 12px);
+      height: 17px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.9);
+      font-size: 8px;
+      font-weight: 600;
+      background: rgba(28,28,30,0.22);
+      border: 1px solid rgba(255,255,255,0.24);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scene-thumb-pin {
+      position: absolute;
+      left: 50%;
+      top: 43%;
+      z-index: 1;
+      width: 26px;
+      height: 26px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.62);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .scene-thumb-pin::before,
+    .scene-thumb-pin::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .scene-thumb-pin::before {
+      width: 12px;
+      height: 1px;
+    }
+
+    .scene-thumb-pin::after {
+      width: 1px;
+      height: 12px;
+    }
+
+    .scene-thumb-label {
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      z-index: 2;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .scene-thumb-label strong {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scene-thumb-meta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 4px;
+      color: rgba(255,255,255,0.82);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .work-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .work-stat::before {
+      content: "";
+      display: inline-block;
+      opacity: 0.84;
+    }
+
+    .work-stat.views::before {
+      width: 8px;
+      height: 6px;
+      border: 1px solid rgba(255,255,255,0.82);
+      border-radius: 50%;
+    }
+
+    .work-stat.actions::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.82);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.12);
+    }
+
     @media (max-width: 880px) {
       main {
         padding: 18px;
@@ -1644,6 +1812,88 @@
                 </div>
               </section>
               <p class="page-note">This entry handles how the app runs and account security. It does not edit nickname, avatar, AR card, or other personal display content.</p>
+
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>6. AR Task Works Grid</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR task works grid mobile wireframe">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>My AR Tasks</h3>
+                <div></div>
+              </div>
+
+              <section class="scene-preview-layout">
+                <div class="scene-grid" aria-label="AR task works thumbnail grid">
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Venice Beach</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Boardwalk Hunt</strong><div class="scene-thumb-meta"><span class="work-stat views">1.2k</span><span class="work-stat actions">86</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Mission District</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Mural Clue Trail</strong><div class="scene-thumb-meta"><span class="work-stat views">842</span><span class="work-stat actions">41</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Santa Monica Pier</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Pier Light Route</strong><div class="scene-thumb-meta"><span class="work-stat views">679</span><span class="work-stat actions">33</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Pike Place Market</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Market Drop Point</strong><div class="scene-thumb-meta"><span class="work-stat views">528</span><span class="work-stat actions">29</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">South Lake Union</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Campus Relay</strong><div class="scene-thumb-meta"><span class="work-stat views">914</span><span class="work-stat actions">56</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Hayes Valley</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Corner Check-in</strong><div class="scene-thumb-meta"><span class="work-stat views">433</span><span class="work-stat actions">18</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Pearl District</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Gallery Easter Egg</strong><div class="scene-thumb-meta"><span class="work-stat views">761</span><span class="work-stat actions">47</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Gaslamp Quarter</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Night Walk Task</strong><div class="scene-thumb-meta"><span class="work-stat views">506</span><span class="work-stat actions">22</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Capitol Hill</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Friends Relay</strong><div class="scene-thumb-meta"><span class="work-stat views">1.5k</span><span class="work-stat actions">103</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Abbot Kinney</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Street Memory</strong><div class="scene-thumb-meta"><span class="work-stat views">391</span><span class="work-stat actions">17</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Downtown Berkeley</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Campus Waypoint</strong><div class="scene-thumb-meta"><span class="work-stat views">887</span><span class="work-stat actions">64</span></div></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-place">Fremont District</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label"><strong>Route Snapshot</strong><div class="scene-thumb-meta"><span class="work-stat views">349</span><span class="work-stat actions">15</span></div></div>
+                  </div>
+                </div>
+              </section>
 
               <div class="home-indicator dark"></div>
             </div>
