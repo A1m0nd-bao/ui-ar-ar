@@ -1307,6 +1307,129 @@
       line-height: 1.55;
     }
 
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .scene-thumb {
+      position: relative;
+      aspect-ratio: 1 / 1.22;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(60,60,67,0.08);
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.52), transparent 18%),
+        linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    }
+
+    .scene-thumb:nth-child(2n) {
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,0.48), transparent 18%),
+        linear-gradient(160deg, #b5b9c8 0%, #d6c7a7 52%, #8f9481 100%);
+    }
+
+    .scene-thumb:nth-child(3n) {
+      background:
+        radial-gradient(circle at 78% 30%, rgba(255,255,255,0.44), transparent 18%),
+        linear-gradient(160deg, #95a9bf 0%, #cdd9d2 48%, #837c6d 100%);
+    }
+
+    .scene-thumb::before {
+      content: "";
+      position: absolute;
+      left: -24%;
+      right: -24%;
+      bottom: 18%;
+      height: 34%;
+      transform: rotate(-7deg);
+      background: rgba(28,28,30,0.12);
+      border-top: 1px solid rgba(255,255,255,0.42);
+    }
+
+    .scene-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 36%, rgba(0,0,0,0.34) 100%);
+    }
+
+    .scene-thumb-pin {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      z-index: 1;
+      width: 30px;
+      height: 30px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.62);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .scene-thumb-pin::before,
+    .scene-thumb-pin::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .scene-thumb-pin::before {
+      width: 14px;
+      height: 1px;
+    }
+
+    .scene-thumb-pin::after {
+      width: 1px;
+      height: 14px;
+    }
+
+    .scene-thumb-badge {
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      z-index: 2;
+      height: 18px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(28,28,30,0.36);
+      border: 1px solid rgba(255,255,255,0.38);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .scene-thumb-label {
+      position: absolute;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
+      z-index: 2;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .scene-thumb-label span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,255,255,0.72);
+      font-size: 9px;
+      font-weight: 500;
+    }
+
     .visibility-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1845,51 +1968,70 @@
               </div>
 
               <section class="scene-preview-layout">
-                <div class="scene-preview-card" aria-label="AR 场景预览组件">
-                  <div class="scene-shelf"></div>
-                  <div class="scene-floor"></div>
-                  <div class="scene-window-shape"></div>
-                  <div class="scene-location-pill">
-                    <span class="scene-location-dot"></span>
-                    <span>客厅 · 书架旁</span>
+                <div class="scene-grid" aria-label="AR 场景预览缩略图网格">
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">书架旁<span>客厅 · 3 锚点</span></div>
                   </div>
-                  <div class="scene-pin">AR</div>
-                  <div class="scene-caption">
-                    <div class="scene-caption-title">
-                      <span>暮光书架场景</span>
-                      <span>›</span>
-                    </div>
-                    <div class="scene-caption-sub">展示地点、环境画面和轻量 AR 氛围，不绑定具体功能。</div>
-                    <div class="scene-chips">
-                      <span class="scene-chip">室内</span>
-                      <span class="scene-chip">已识别平面</span>
-                      <span class="scene-chip">3 个锚点</span>
-                    </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">窗边<span>卧室 · 1 任务</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">桌面<span>办公室 · 2 记录</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">门口<span>走廊 · 已识别</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">沙发<span>客厅 · 角色</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">白板<span>会议室 · 任务</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">展架<span>门店 · 活动</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">台阶<span>广场 · 附近</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">书桌<span>学习区 · 收藏</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">橱窗<span>街角 · 新</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">植物<span>阳台 · 角色</span></div>
+                  </div>
+                  <div class="scene-thumb">
+                    <span class="scene-thumb-badge">AR</span>
+                    <span class="scene-thumb-pin"></span>
+                    <div class="scene-thumb-label">墙面<span>展厅 · 5 锚点</span></div>
                   </div>
                 </div>
 
-                <p class="scene-preview-note">这个小窗可以放在探索页、任务详情、个人主页或放置记录里。它的重点不是解释功能，而是让用户快速知道：这是哪里、是什么场景、有没有 AR 内容。</p>
-              </section>
-
-              <div class="section-title">
-                <span>建议包含的元素</span>
-              </div>
-              <section class="settings-group">
-                <div class="settings-row">
-                  <span class="settings-symbol">地</span>
-                  <span>地点名称 / 距离 / 室内外</span>
-                  <span class="chevron">›</span>
-                </div>
-                <div class="settings-row">
-                  <span class="settings-symbol gray">景</span>
-                  <span>场景缩略画面</span>
-                  <span class="chevron">›</span>
-                </div>
-                <div class="settings-row">
-                  <span class="settings-symbol gray">AR</span>
-                  <span>锚点、角色或任务的轻提示</span>
-                  <span class="chevron">›</span>
-                </div>
+                <p class="scene-preview-note">缩略图像作品流一样排列：一屏约 12 个，只保留地点、场景氛围和 AR 轻提示。</p>
               </section>
 
               <div class="home-indicator dark"></div>
