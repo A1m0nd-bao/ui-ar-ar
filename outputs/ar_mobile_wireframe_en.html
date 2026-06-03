@@ -1022,7 +1022,7 @@
     }
 
     .profile-name {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 740;
       margin-bottom: 5px;
     }
@@ -1044,14 +1044,14 @@
 
     .profile-chip {
       min-height: 28px;
-      padding: 0 10px;
+      padding: 0 9px;
       display: inline-flex;
       align-items: center;
       border-radius: 999px;
       background: rgba(255,255,255,0.62);
       border: 1px solid rgba(255,255,255,0.72);
       color: #345154;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -1095,6 +1095,7 @@
       min-height: 116px;
       border-radius: 20px;
       padding: 14px;
+      padding-right: 116px;
       overflow: hidden;
       border: 1px solid rgba(60,60,67,0.08);
       background: rgba(255,255,255,0.88);
@@ -1179,6 +1180,7 @@
     .settings-row {
       grid-template-columns: 32px 1fr auto;
       gap: 10px;
+      line-height: 1.25;
     }
 
     .form-row:last-child,
@@ -1461,14 +1463,14 @@
               </section>
 
               <div class="section-title">
-                <span>Custom Character</span>
+                <span>Character Studio</span>
                 <span class="meta">Card Flip</span>
               </div>
               <section class="character-card">
                 <div class="character-copy">
-                  <h4>Current Character</h4>
-                  <div class="meta">Tap the card to view both sides and edit appearance, motion, voice, or interaction style.</div>
-                  <span class="inline-button">Edit Character</span>
+                  <h4>Active Character</h4>
+                  <div class="meta">Flip the card and customize appearance, motion, voice, or interaction style.</div>
+                  <span class="inline-button">Customize</span>
                 </div>
                 <div class="card-shadow"></div>
                 <div class="card-front">Character Card<br>Front / Back</div>
@@ -1524,11 +1526,11 @@
                   <div class="avatar large"></div>
                   <div>
                     <div class="profile-name">Username / Nickname</div>
-                    <div class="profile-bio">Show my AR character, tasks, and placement footprint to friends.</div>
+                    <div class="profile-bio">Share my AR identity, tasks, and footprint with friends.</div>
                   </div>
                 </div>
                 <div class="profile-badges">
-                  <span class="profile-chip">Default Character: Current</span>
+                  <span class="profile-chip">Active Character</span>
                   <span class="profile-chip">AR Card Enabled</span>
                 </div>
                 <div class="profile-stats">
@@ -1552,7 +1554,7 @@
               </div>
               <section class="social-card">
                 <h4>My AR Card</h4>
-                <div class="meta">When friends discover me nearby, they will see this identity card and my default character.</div>
+                <div class="meta">Shown when friends discover me nearby.</div>
                 <span class="inline-button">Edit Card</span>
                 <div class="mini-ar-card">AR Card</div>
               </section>
@@ -1606,7 +1608,7 @@
               <section class="settings-group">
                 <div class="settings-row">
                   <span class="settings-symbol">AR</span>
-                  <span>Camera, Photos & Location Permissions</span>
+                  <span>Camera & Location</span>
                   <span class="chevron">›</span>
                 </div>
                 <div class="settings-row">
