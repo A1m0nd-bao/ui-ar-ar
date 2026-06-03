@@ -1125,7 +1125,7 @@
 
     .scene-preview-layout {
       display: grid;
-      gap: 14px;
+      gap: 0;
     }
 
     .scene-preview-card {
@@ -1310,19 +1310,19 @@
     .scene-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
+      gap: 5px;
     }
 
     .scene-thumb {
       position: relative;
-      aspect-ratio: 1 / 1.22;
+      aspect-ratio: 1 / 1.48;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 1px solid rgba(60,60,67,0.08);
       background:
         radial-gradient(circle at 72% 18%, rgba(255,255,255,0.52), transparent 18%),
         linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     }
 
     .scene-thumb:nth-child(2n) {
@@ -1353,16 +1353,39 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 36%, rgba(0,0,0,0.34) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, transparent 34%, rgba(0,0,0,0.46) 100%);
+    }
+
+    .scene-thumb-place {
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      z-index: 2;
+      max-width: calc(100% - 12px);
+      height: 17px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.9);
+      font-size: 8px;
+      font-weight: 600;
+      background: rgba(28,28,30,0.22);
+      border: 1px solid rgba(255,255,255,0.24);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .scene-thumb-pin {
       position: absolute;
       left: 50%;
-      top: 45%;
+      top: 43%;
       z-index: 1;
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
       border: 1px solid rgba(255,255,255,0.62);
@@ -1382,33 +1405,69 @@
     }
 
     .scene-thumb-pin::before {
-      width: 14px;
+      width: 12px;
       height: 1px;
     }
 
     .scene-thumb-pin::after {
       width: 1px;
-      height: 14px;
+      height: 12px;
     }
 
     .scene-thumb-label {
       position: absolute;
-      left: 7px;
-      right: 7px;
-      bottom: 7px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
       z-index: 2;
       color: white;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
       line-height: 1.25;
     }
 
-    .scene-thumb-label span {
+    .scene-thumb-label strong {
       display: block;
-      margin-top: 2px;
-      color: rgba(255,255,255,0.72);
-      font-size: 9px;
-      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scene-thumb-meta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 4px;
+      color: rgba(255,255,255,0.82);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .work-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .work-stat::before {
+      content: "";
+      display: inline-block;
+      opacity: 0.84;
+    }
+
+    .work-stat.views::before {
+      width: 8px;
+      height: 6px;
+      border: 1px solid rgba(255,255,255,0.82);
+      border-radius: 50%;
+    }
+
+    .work-stat.actions::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.82);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.12);
     }
 
     .visibility-row {
@@ -1938,69 +1997,79 @@
       </article>
 
       <article class="board">
-        <h2>6. AR 场景预览小窗</h2>
+        <h2>6. AR 任务作品流</h2>
         <div class="phone-wrap">
-          <div class="phone" aria-label="AR 场景预览小窗手机线框">
+          <div class="phone" aria-label="AR 任务作品流手机线框">
             <div class="my-screen">
               <div class="top-nav">
                 <div class="small-icon">‹</div>
-                <h3>场景预览</h3>
+                <h3>我的 AR 任务</h3>
                 <div></div>
               </div>
 
               <section class="scene-preview-layout">
-                <div class="scene-grid" aria-label="AR 场景预览缩略图网格">
+                <div class="scene-grid" aria-label="AR 任务作品缩略图网格">
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">南京路步行街</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">南京路步行街<span>热度 · 12 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>城市寻宝任务</strong><div class="scene-thumb-meta"><span class="work-stat views">1.2k</span><span class="work-stat actions">86</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">漕河泾科技绿洲</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">漕河泾科技绿洲<span>园区 · 8 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>园区打卡挑战</strong><div class="scene-thumb-meta"><span class="work-stat views">842</span><span class="work-stat actions">41</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">陆家嘴滨江</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">陆家嘴滨江<span>江岸漫游 · 6 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>江岸光标路线</strong><div class="scene-thumb-meta"><span class="work-stat views">679</span><span class="work-stat actions">33</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">武康路街区</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">武康路街区<span>慢行 · 5 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>街角隐藏线索</strong><div class="scene-thumb-meta"><span class="work-stat views">528</span><span class="work-stat actions">29</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">徐家汇商圈</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">徐家汇商圈<span>附近 · 9 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>商圈协作任务</strong><div class="scene-thumb-meta"><span class="work-stat views">914</span><span class="work-stat actions">56</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">静安寺广场</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">静安寺广场<span>地标任务 · 4 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>地标合影点</strong><div class="scene-thumb-meta"><span class="work-stat views">433</span><span class="work-stat actions">18</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">前滩太古里</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">前滩太古里<span>商业场景 · 7 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>品牌彩蛋墙</strong><div class="scene-thumb-meta"><span class="work-stat views">761</span><span class="work-stat actions">47</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">世纪公园</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">世纪公园<span>开放空间 · 6 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>草坪集合点</strong><div class="scene-thumb-meta"><span class="work-stat views">506</span><span class="work-stat actions">22</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">外滩观景带</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">外滩观景带<span>热门路线 · 10 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>夜景路径任务</strong><div class="scene-thumb-meta"><span class="work-stat views">1.5k</span><span class="work-stat actions">103</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">张江人工智能岛</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">张江人工智能岛<span>园区 · 5 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>未来感标记</strong><div class="scene-thumb-meta"><span class="work-stat views">391</span><span class="work-stat actions">17</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">新天地街区</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">新天地街区<span>社交 · 8 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>好友接力点</strong><div class="scene-thumb-meta"><span class="work-stat views">887</span><span class="work-stat actions">64</span></div></div>
                   </div>
                   <div class="scene-thumb">
+                    <span class="scene-thumb-place">愚园路街区</span>
                     <span class="scene-thumb-pin"></span>
-                    <div class="scene-thumb-label">愚园路街区<span>轻探索 · 4 个内容</span></div>
+                    <div class="scene-thumb-label"><strong>路线记忆卡</strong><div class="scene-thumb-meta"><span class="work-stat views">349</span><span class="work-stat actions">15</span></div></div>
                   </div>
                 </div>
-
-                <p class="scene-preview-note">缩略图以街区、园区、商圈为单位排列：一屏约 12 个，只保留地点名称、场景氛围和轻量锚点。</p>
               </section>
 
               <div class="home-indicator dark"></div>
