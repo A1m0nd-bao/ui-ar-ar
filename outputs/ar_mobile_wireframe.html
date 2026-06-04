@@ -2359,6 +2359,86 @@
       border-color: rgba(0,122,255,0.18);
     }
 
+    .media-detail-screen.transition .media-window {
+      height: 292px;
+      border-radius: 0 0 26px 26px;
+    }
+
+    .media-detail-screen.transition .media-topbar {
+      top: 58px;
+    }
+
+    .media-detail-screen.transition .media-location,
+    .media-detail-screen.transition .media-type-pill {
+      top: 110px;
+      transform: scale(0.88);
+      transform-origin: left center;
+      opacity: 0.82;
+    }
+
+    .media-detail-screen.transition .media-type-pill {
+      transform-origin: right center;
+    }
+
+    .media-detail-screen.transition .media-character {
+      width: 46px;
+      height: 62px;
+      bottom: 42px;
+      opacity: 0.58;
+    }
+
+    .media-detail-screen.transition .media-play-dot {
+      width: 36px;
+      height: 36px;
+      font-size: 13px;
+      opacity: 0.72;
+    }
+
+    .media-detail-screen.transition .media-reticle {
+      width: 52px;
+      height: 52px;
+      top: 58%;
+    }
+
+    .media-detail-screen.transition .media-info-sheet {
+      top: 232px;
+      padding-top: 10px;
+    }
+
+    .media-detail-screen.transition .sheet-stats,
+    .media-detail-screen.transition .sheet-cta-row {
+      display: none;
+    }
+
+    .media-detail-screen.transition .compact-task-summary {
+      margin-bottom: 10px;
+    }
+
+    .media-detail-screen.transition .transition-note {
+      display: grid;
+    }
+
+    .transition-note {
+      display: none;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      min-height: 44px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      border-radius: 16px;
+      color: #3a3a3c;
+      font-size: 11px;
+      font-weight: 650;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .transition-note span:last-child {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
     .media-detail-screen.compact .media-window {
       height: 184px;
       border-radius: 0 0 22px 22px;
@@ -3131,7 +3211,7 @@
         <h2>9. 详情页下滑浓缩态</h2>
         <div class="phone-wrap">
           <div class="phone" aria-label="任务详情下滑浓缩态手机线框">
-            <div class="media-detail-screen compact">
+            <div class="media-detail-screen transition">
               <div class="privacy-dot"></div>
               <section class="media-window">
                 <div class="media-topbar">
@@ -3139,16 +3219,24 @@
                   <div class="media-title">城市寻宝任务</div>
                   <div class="media-glass">•••</div>
                 </div>
+                <div class="media-location">南京路步行街</div>
+                <div class="media-type-pill">录屏压缩中</div>
                 <div class="media-reticle"></div>
+                <div class="media-character"></div>
+                <div class="media-play-dot">▶</div>
               </section>
               <div class="media-info-sheet">
                 <div class="sheet-handle"></div>
                 <div class="compact-task-summary">
                   <div>
                     <h4>城市寻宝任务</h4>
-                    <p>媒体窗口已浓缩，互动详情成为主内容。</p>
+                    <p>媒体窗口正在上收，评论与互动从下方展开。</p>
                   </div>
                   <div class="sheet-status">南京路</div>
+                </div>
+                <div class="transition-note">
+                  <span>媒体窗口与详情页正在合并</span>
+                  <span>下滑中</span>
                 </div>
                 <div class="interaction-tabs" aria-label="下滑后互动筛选">
                   <div class="interaction-tab active">全部</div>
