@@ -2071,6 +2071,340 @@
       font-size: 11px;
     }
 
+    .media-detail-screen {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #f5f5f7;
+    }
+
+    .media-window {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 540px;
+      overflow: hidden;
+      border-radius: 0 0 34px 34px;
+      background:
+        linear-gradient(180deg, rgba(20,20,22,0.05), rgba(20,20,22,0.3)),
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.5), transparent 19%),
+        linear-gradient(135deg, #8eb5ae 0%, #c3d0ca 36%, #d0c5aa 60%, #8c957c 100%);
+    }
+
+    .media-window::before {
+      content: "";
+      position: absolute;
+      left: -30%;
+      right: -30%;
+      bottom: 24%;
+      height: 28%;
+      transform: rotate(-7deg);
+      background: rgba(66,80,77,0.22);
+      border-top: 2px solid rgba(255,255,255,0.34);
+      border-bottom: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .media-window::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), transparent 34%, rgba(0,0,0,0.18));
+    }
+
+    .media-topbar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 64px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+      color: white;
+    }
+
+    .media-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.28);
+    }
+
+    .media-glass {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-location {
+      position: absolute;
+      left: 18px;
+      top: 118px;
+      z-index: 3;
+      height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.92);
+      font-size: 12px;
+      font-weight: 650;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-type-pill {
+      position: absolute;
+      right: 18px;
+      top: 118px;
+      z-index: 3;
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(255,255,255,0.9);
+      font-size: 11px;
+      font-weight: 650;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-reticle {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      z-index: 2;
+      width: 76px;
+      height: 76px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.66);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.14);
+    }
+
+    .media-reticle::before,
+    .media-reticle::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .media-reticle::before {
+      width: 34px;
+      height: 1px;
+    }
+
+    .media-reticle::after {
+      width: 1px;
+      height: 34px;
+    }
+
+    .media-character {
+      position: absolute;
+      left: 54%;
+      bottom: 78px;
+      z-index: 2;
+      width: 74px;
+      height: 96px;
+      transform: translateX(-50%);
+      border-radius: 28px 28px 24px 24px;
+      background:
+        radial-gradient(circle at 50% 28%, #ffe4b7 0 22%, #ff9f0a 23% 37%, transparent 38%),
+        linear-gradient(180deg, #4aa6a0, #1d5458);
+      box-shadow: 0 22px 34px rgba(0,0,0,0.18);
+      opacity: 0.92;
+    }
+
+    .media-play-dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 18px;
+      background: rgba(28,28,30,0.34);
+      border: 1px solid rgba(255,255,255,0.46);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-info-sheet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 468px;
+      bottom: 0;
+      z-index: 4;
+      border-radius: 30px 30px 0 0;
+      padding: 12px 18px 22px;
+      background: #f7f7f9;
+      box-shadow: 0 -18px 34px rgba(0,0,0,0.12);
+    }
+
+    .sheet-handle {
+      width: 42px;
+      height: 4px;
+      border-radius: 999px;
+      margin: 0 auto 14px;
+      background: rgba(60,60,67,0.22);
+    }
+
+    .sheet-title-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .sheet-title-row h4 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .sheet-title-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .sheet-status {
+      height: 26px;
+      padding: 0 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #3a3a3c;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    .sheet-stat {
+      min-height: 52px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-stat b {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .sheet-stat span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .sheet-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .sheet-cta {
+      height: 38px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-cta.primary {
+      color: white;
+      background: var(--accent);
+      border-color: rgba(0,122,255,0.18);
+    }
+
+    .media-detail-screen.compact .media-window {
+      height: 184px;
+      border-radius: 0 0 22px 22px;
+    }
+
+    .media-detail-screen.compact .media-topbar {
+      top: 58px;
+    }
+
+    .media-detail-screen.compact .media-location,
+    .media-detail-screen.compact .media-type-pill,
+    .media-detail-screen.compact .media-character,
+    .media-detail-screen.compact .media-play-dot {
+      display: none;
+    }
+
+    .media-detail-screen.compact .media-reticle {
+      width: 44px;
+      height: 44px;
+      top: 62%;
+    }
+
+    .media-detail-screen.compact .media-info-sheet {
+      top: 154px;
+      padding-top: 10px;
+    }
+
+    .compact-task-summary {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .compact-task-summary h4 {
+      margin: 0 0 3px;
+      font-size: 15px;
+    }
+
+    .compact-task-summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
     .visibility-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -2753,28 +3087,39 @@
         <h2>8. AR 任务详情页</h2>
         <div class="phone-wrap">
           <div class="phone" aria-label="AR 任务详情页手机线框">
-            <div class="ar-detail-screen">
+            <div class="media-detail-screen">
               <div class="privacy-dot"></div>
-              <div class="ar-detail-top">
-                <div class="ar-detail-glass">‹</div>
-                <div class="ar-detail-title">任务详情</div>
-                <div class="ar-detail-glass">•••</div>
-              </div>
-              <div class="ar-detail-location">南京路步行街</div>
-              <div class="ar-detail-reticle"></div>
-              <section class="ar-detail-card">
-                <h4>城市寻宝任务</h4>
-                <p>在商圈的三个锚点寻找线索。下划可查看评论、互动和新增关注。</p>
-                <div class="ar-detail-stats">
-                  <div class="ar-detail-stat"><b>1.2k</b><span>浏览</span></div>
-                  <div class="ar-detail-stat"><b>428</b><span>点赞</span></div>
-                  <div class="ar-detail-stat"><b>96</b><span>互动</span></div>
-                  <div class="ar-detail-stat"><b>24</b><span>评论</span></div>
+              <section class="media-window">
+                <div class="media-topbar">
+                  <div class="media-glass">‹</div>
+                  <div class="media-title">任务详情</div>
+                  <div class="media-glass">•••</div>
                 </div>
+                <div class="media-location">南京路步行街</div>
+                <div class="media-type-pill">放置录屏</div>
+                <div class="media-reticle"></div>
+                <div class="media-character"></div>
+                <div class="media-play-dot">▶</div>
               </section>
-              <div class="ar-detail-sheet-hint">
-                <span>评论与互动详情</span>
-                <span>上滑查看</span>
+              <div class="media-info-sheet">
+                <div class="sheet-handle"></div>
+                <div class="sheet-title-row">
+                  <div>
+                    <h4>城市寻宝任务</h4>
+                    <p>这是我在南京路步行街放置任务时留下的录屏，也可替换成与 AR 形象的合照。</p>
+                  </div>
+                  <div class="sheet-status">公开</div>
+                </div>
+                <div class="sheet-stats">
+                  <div class="sheet-stat"><b>1.2k</b><span>浏览</span></div>
+                  <div class="sheet-stat"><b>428</b><span>点赞</span></div>
+                  <div class="sheet-stat"><b>96</b><span>互动</span></div>
+                  <div class="sheet-stat"><b>24</b><span>评论</span></div>
+                </div>
+                <div class="sheet-cta-row">
+                  <div class="sheet-cta primary">查看互动详情</div>
+                  <div class="sheet-cta">分享任务</div>
+                </div>
               </div>
               <div class="home-indicator"></div>
             </div>
@@ -2783,7 +3128,72 @@
       </article>
 
       <article class="board">
-        <h2>9. 评论 / 互动详情页</h2>
+        <h2>9. 详情页下滑浓缩态</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="任务详情下滑浓缩态手机线框">
+            <div class="media-detail-screen compact">
+              <div class="privacy-dot"></div>
+              <section class="media-window">
+                <div class="media-topbar">
+                  <div class="media-glass">‹</div>
+                  <div class="media-title">城市寻宝任务</div>
+                  <div class="media-glass">•••</div>
+                </div>
+                <div class="media-reticle"></div>
+              </section>
+              <div class="media-info-sheet">
+                <div class="sheet-handle"></div>
+                <div class="compact-task-summary">
+                  <div>
+                    <h4>城市寻宝任务</h4>
+                    <p>媒体窗口已浓缩，互动详情成为主内容。</p>
+                  </div>
+                  <div class="sheet-status">南京路</div>
+                </div>
+                <div class="interaction-tabs" aria-label="下滑后互动筛选">
+                  <div class="interaction-tab active">全部</div>
+                  <div class="interaction-tab">评论</div>
+                  <div class="interaction-tab">点赞</div>
+                  <div class="interaction-tab">关注</div>
+                </div>
+                <section class="social-card">
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>阿树</b>
+                      这个线索点刚好在橱窗旁边，扫到之后反馈很明显。
+                      <span>3h · 回复</span>
+                    </div>
+                    <div class="comment-like">12</div>
+                  </div>
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>Mia</b>
+                      我完成了第二个锚点，第三个是不是在街口？
+                      <span>2h · 回复</span>
+                    </div>
+                    <div class="comment-like">8</div>
+                  </div>
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>Leo</b>
+                      开始关注你，并收藏了这个任务。
+                      <span>1h</span>
+                    </div>
+                    <div class="comment-like">关注</div>
+                  </div>
+                </section>
+              </div>
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>10. 消息入口互动详情页</h2>
         <div class="phone-wrap">
           <div class="phone" aria-label="评论互动详情页手机线框">
             <div class="my-screen">
