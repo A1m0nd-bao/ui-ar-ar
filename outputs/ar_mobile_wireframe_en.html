@@ -1609,6 +1609,542 @@
       font-size: 10px;
     }
 
+    .comment-summary {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .comment-task-cover {
+      position: relative;
+      overflow: hidden;
+      width: 74px;
+      height: 92px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.52), transparent 18%),
+        linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
+    }
+
+    .comment-task-cover::after {
+      content: "";
+      position: absolute;
+      inset: 36% 30%;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.72);
+    }
+
+    .comment-summary h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .comment-summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .comment-row {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .comment-row:last-child {
+      border-bottom: 0;
+    }
+
+    .comment-body {
+      color: #3a3a3c;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .comment-body b {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+    }
+
+    .comment-body span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .comment-like {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .reply-bar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 34px;
+      height: 44px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    .reply-send {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .media-detail-screen {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #f5f5f7;
+    }
+
+    .media-window {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 540px;
+      overflow: hidden;
+      border-radius: 0 0 34px 34px;
+      background:
+        linear-gradient(180deg, rgba(20,20,22,0.05), rgba(20,20,22,0.3)),
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.5), transparent 19%),
+        linear-gradient(135deg, #8eb5ae 0%, #c3d0ca 36%, #d0c5aa 60%, #8c957c 100%);
+    }
+
+    .media-window::before {
+      content: "";
+      position: absolute;
+      left: -30%;
+      right: -30%;
+      bottom: 24%;
+      height: 28%;
+      transform: rotate(-7deg);
+      background: rgba(66,80,77,0.22);
+      border-top: 2px solid rgba(255,255,255,0.34);
+      border-bottom: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .media-window::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), transparent 34%, rgba(0,0,0,0.18));
+    }
+
+    .media-place-card {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 88px;
+      z-index: 3;
+      min-height: 72px;
+      padding: 12px 14px;
+      border-radius: 22px;
+      color: white;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.38);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+    }
+
+    .media-place-card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 1.1;
+    }
+
+    .media-place-card span {
+      display: block;
+      max-width: 236px;
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .media-place-card::after {
+      content: "00:12";
+      position: absolute;
+      right: 14px;
+      bottom: 13px;
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .media-progress {
+      position: absolute;
+      left: 14px;
+      right: 58px;
+      bottom: 13px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.22);
+      overflow: hidden;
+    }
+
+    .media-progress::after {
+      content: "";
+      display: block;
+      width: 42%;
+      height: 100%;
+      border-radius: inherit;
+      background: rgba(255,255,255,0.88);
+    }
+
+    .media-anchor {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      z-index: 2;
+      width: 86px;
+      height: 86px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.52);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 14px rgba(255,255,255,0.08), 0 22px 36px rgba(0,0,0,0.12);
+    }
+
+    .media-anchor::before,
+    .media-anchor::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .media-anchor::before {
+      width: 32px;
+      height: 2px;
+    }
+
+    .media-anchor::after {
+      width: 2px;
+      height: 32px;
+    }
+
+    .media-topbar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 64px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+      color: white;
+    }
+
+    .media-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.28);
+    }
+
+    .media-glass {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-location,
+    .media-type-pill {
+      position: absolute;
+      top: 118px;
+      z-index: 3;
+      height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.92);
+      font-size: 12px;
+      font-weight: 650;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-location {
+      left: 18px;
+    }
+
+    .media-type-pill {
+      right: 18px;
+      gap: 5px;
+      font-size: 11px;
+    }
+
+    .media-play-dot {
+      position: absolute;
+      right: 42px;
+      bottom: 112px;
+      z-index: 3;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 12px;
+      background: rgba(28,28,30,0.34);
+      border: 1px solid rgba(255,255,255,0.46);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .media-info-sheet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 468px;
+      bottom: 0;
+      z-index: 4;
+      border-radius: 30px 30px 0 0;
+      padding: 12px 18px 22px;
+      background: #f7f7f9;
+      box-shadow: 0 -18px 34px rgba(0,0,0,0.12);
+    }
+
+    .sheet-handle {
+      width: 42px;
+      height: 4px;
+      border-radius: 999px;
+      margin: 0 auto 14px;
+      background: rgba(60,60,67,0.22);
+    }
+
+    .sheet-title-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .sheet-title-row h4 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .sheet-title-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .sheet-status {
+      height: 26px;
+      padding: 0 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #3a3a3c;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    .sheet-stat {
+      min-height: 52px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-stat b {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .sheet-stat span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .sheet-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .sheet-cta {
+      height: 38px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .sheet-cta.primary {
+      color: white;
+      background: var(--accent);
+      border-color: rgba(0,122,255,0.18);
+    }
+
+    .media-detail-screen.transition .media-window {
+      height: 292px;
+      border-radius: 0 0 26px 26px;
+    }
+
+    .media-detail-screen.transition .media-topbar {
+      top: 58px;
+    }
+
+    .media-detail-screen.transition .media-location,
+    .media-detail-screen.transition .media-type-pill {
+      top: 110px;
+      transform: scale(0.88);
+      transform-origin: left center;
+      opacity: 0.82;
+    }
+
+    .media-detail-screen.transition .media-type-pill {
+      transform-origin: right center;
+    }
+
+    .media-detail-screen.transition .media-play-dot {
+      width: 30px;
+      height: 30px;
+      right: 38px;
+      bottom: 76px;
+      font-size: 10px;
+      opacity: 0.72;
+    }
+
+    .media-detail-screen.transition .media-info-sheet {
+      top: 232px;
+      padding-top: 10px;
+    }
+
+    .media-detail-screen.transition .sheet-stats,
+    .media-detail-screen.transition .sheet-cta-row {
+      display: none;
+    }
+
+    .media-detail-screen.transition .compact-task-summary {
+      margin-bottom: 10px;
+    }
+
+    .media-detail-screen.transition .transition-note {
+      display: grid;
+    }
+
+    .media-detail-screen.transition .media-place-card {
+      bottom: 32px;
+      min-height: 58px;
+      transform: scale(0.84);
+      transform-origin: left bottom;
+      opacity: 0.78;
+    }
+
+    .media-detail-screen.transition .media-place-card span,
+    .media-detail-screen.transition .media-progress,
+    .media-detail-screen.transition .media-place-card::after {
+      display: none;
+    }
+
+    .media-detail-screen.transition .media-anchor {
+      width: 54px;
+      height: 54px;
+      top: 58%;
+      opacity: 0.56;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.07), 0 14px 26px rgba(0,0,0,0.1);
+    }
+
+    .transition-note {
+      display: none;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      min-height: 44px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      border-radius: 16px;
+      color: #3a3a3c;
+      font-size: 11px;
+      font-weight: 650;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .transition-note span:last-child {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .compact-task-summary {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .compact-task-summary h4 {
+      margin: 0 0 3px;
+      font-size: 15px;
+    }
+
+    .compact-task-summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
     @media (max-width: 880px) {
       main {
         padding: 18px;
@@ -2085,6 +2621,206 @@
                 </div>
               </section>
 
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>8. AR Task Detail Page</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR task detail mobile wireframe">
+            <div class="media-detail-screen">
+              <div class="privacy-dot"></div>
+              <section class="media-window">
+                <div class="media-topbar">
+                  <div class="media-glass">‹</div>
+                  <div class="media-title">Task Detail</div>
+                  <div class="media-glass">•••</div>
+                </div>
+                <div class="media-location">Venice Beach</div>
+                <div class="media-type-pill">Placement Replay</div>
+                <div class="media-anchor"></div>
+                <div class="media-play-dot">▶</div>
+                <div class="media-place-card">
+                  <b>Placement Moment</b>
+                  <span>Recorded when the task was placed near the Venice Beach boardwalk storefronts.</span>
+                  <div class="media-progress"></div>
+                </div>
+              </section>
+              <div class="media-info-sheet">
+                <div class="sheet-handle"></div>
+                <div class="sheet-title-row">
+                  <div>
+                    <h4>Boardwalk Hunt</h4>
+                    <p>A replay captured when this AR task was placed at Venice Beach. It can also be replaced with a selfie or scene recording.</p>
+                  </div>
+                  <div class="sheet-status">Public</div>
+                </div>
+                <div class="sheet-stats">
+                  <div class="sheet-stat"><b>1.2k</b><span>Views</span></div>
+                  <div class="sheet-stat"><b>428</b><span>Likes</span></div>
+                  <div class="sheet-stat"><b>96</b><span>Acts</span></div>
+                  <div class="sheet-stat"><b>24</b><span>Comments</span></div>
+                </div>
+                <div class="sheet-cta-row">
+                  <div class="sheet-cta primary">View Interactions</div>
+                  <div class="sheet-cta">Share Task</div>
+                </div>
+              </div>
+              <div class="home-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>9. Detail Scroll Transition</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR task detail scroll transition mobile wireframe">
+            <div class="media-detail-screen transition">
+              <div class="privacy-dot"></div>
+              <section class="media-window">
+                <div class="media-topbar">
+                  <div class="media-glass">‹</div>
+                  <div class="media-title">Boardwalk Hunt</div>
+                  <div class="media-glass">•••</div>
+                </div>
+                <div class="media-location">Venice Beach</div>
+                <div class="media-type-pill">Replay Compacting</div>
+                <div class="media-anchor"></div>
+                <div class="media-play-dot">▶</div>
+                <div class="media-place-card">
+                  <b>Placement Moment</b>
+                  <span>The media window is being compressed while keeping the place and replay identity visible.</span>
+                  <div class="media-progress"></div>
+                </div>
+              </section>
+              <div class="media-info-sheet">
+                <div class="sheet-handle"></div>
+                <div class="compact-task-summary">
+                  <div>
+                    <h4>Boardwalk Hunt</h4>
+                    <p>The media window is folding upward as comments and interactions expand.</p>
+                  </div>
+                  <div class="sheet-status">Venice</div>
+                </div>
+                <div class="transition-note">
+                  <span>Media and detail sheet are merging</span>
+                  <span>Scrolling</span>
+                </div>
+                <div class="interaction-tabs" aria-label="Interaction filters after scrolling">
+                  <div class="interaction-tab active">All</div>
+                  <div class="interaction-tab">Comments</div>
+                  <div class="interaction-tab">Likes</div>
+                  <div class="interaction-tab">Follows</div>
+                </div>
+                <section class="social-card">
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>Ava</b>
+                      The clue point is right beside the boardwalk storefront. The scan feedback feels clear.
+                      <span>3h · Reply</span>
+                    </div>
+                    <div class="comment-like">12</div>
+                  </div>
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>Mia</b>
+                      I finished the second anchor. Is the third one near the corner?
+                      <span>2h · Reply</span>
+                    </div>
+                    <div class="comment-like">8</div>
+                  </div>
+                  <div class="comment-row">
+                    <div class="interaction-avatar"></div>
+                    <div class="comment-body">
+                      <b>Leo</b>
+                      Followed you and saved this task.
+                      <span>1h</span>
+                    </div>
+                    <div class="comment-like">Follow</div>
+                  </div>
+                </section>
+              </div>
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>10. Message Entry Interaction Detail</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="Message entry interaction detail mobile wireframe">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>Interaction Detail</h3>
+                <div></div>
+              </div>
+
+              <section class="comment-summary">
+                <div class="comment-task-cover"></div>
+                <div>
+                  <h4>Boardwalk Hunt</h4>
+                  <p>Venice Beach · 24 comments · 96 interactions</p>
+                </div>
+              </section>
+
+              <div class="interaction-tabs" aria-label="Comment interaction filters">
+                <div class="interaction-tab active">All</div>
+                <div class="interaction-tab">Comments</div>
+                <div class="interaction-tab">Likes</div>
+                <div class="interaction-tab">Follows</div>
+              </div>
+
+              <section class="social-card">
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Ava</b>
+                    The clue point is right beside the boardwalk storefront. The scan feedback feels clear.
+                    <span>3h · Reply</span>
+                  </div>
+                  <div class="comment-like">12</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Mia</b>
+                    I finished the second anchor. Is the third one near the corner?
+                    <span>2h · Reply</span>
+                  </div>
+                  <div class="comment-like">8</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Leo</b>
+                    Followed you and saved this task.
+                    <span>1h</span>
+                  </div>
+                  <div class="comment-like">Follow</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Nora</b>
+                    I want to see more AR tasks built for friends to play together.
+                    <span>Today · Reply</span>
+                  </div>
+                  <div class="comment-like">5</div>
+                </div>
+              </section>
+
+              <div class="reply-bar">
+                <span>Reply or add a task hint...</span>
+                <span class="reply-send">Send</span>
+              </div>
               <div class="home-indicator dark"></div>
             </div>
           </div>
