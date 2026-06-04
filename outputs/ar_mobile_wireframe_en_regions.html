@@ -1760,8 +1760,8 @@
       right: 22px;
       bottom: 88px;
       z-index: 3;
-      min-height: 72px;
-      padding: 12px 14px;
+      min-height: 68px;
+      padding: 11px 14px;
       border-radius: 22px;
       color: white;
       background: rgba(28,28,30,0.28);
@@ -1773,7 +1773,7 @@
 
     .media-place-card b {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-size: 14px;
       line-height: 1.1;
     }
@@ -1783,7 +1783,10 @@
       max-width: 236px;
       color: rgba(255,255,255,0.72);
       font-size: 10px;
-      line-height: 1.35;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .media-place-card::after {
@@ -1938,7 +1941,7 @@
       bottom: 0;
       z-index: 4;
       border-radius: 30px 30px 0 0;
-      padding: 12px 18px 22px;
+      padding: 10px 18px 22px;
       background: #f7f7f9;
       box-shadow: 0 -18px 34px rgba(0,0,0,0.12);
     }
@@ -1947,7 +1950,7 @@
       width: 42px;
       height: 4px;
       border-radius: 999px;
-      margin: 0 auto 14px;
+      margin: 0 auto 12px;
       background: rgba(60,60,67,0.22);
     }
 
@@ -1956,19 +1959,19 @@
       grid-template-columns: 1fr auto;
       gap: 10px;
       align-items: start;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .sheet-title-row h4 {
       margin: 0 0 5px;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     .sheet-title-row p {
       margin: 0;
       color: var(--muted);
-      font-size: 11px;
-      line-height: 1.4;
+      font-size: 10px;
+      line-height: 1.32;
     }
 
     .sheet-status {
@@ -1991,7 +1994,7 @@
     }
 
     .sheet-stat {
-      min-height: 52px;
+      min-height: 48px;
       display: grid;
       place-items: center;
       align-content: center;
@@ -2015,15 +2018,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .sheet-cta {
-      height: 38px;
+      height: 36px;
       border-radius: 999px;
       display: grid;
       place-items: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       background: rgba(255,255,255,0.9);
       border: 1px solid rgba(60,60,67,0.08);
@@ -2640,12 +2643,12 @@
                   <div class="media-glass">•••</div>
                 </div>
                 <div class="media-location">Venice Beach</div>
-                <div class="media-type-pill">Placement Replay</div>
+                <div class="media-type-pill">Replay</div>
                 <div class="media-anchor"></div>
                 <div class="media-play-dot">▶</div>
                 <div class="media-place-card">
                   <b>Placement Moment</b>
-                  <span>Recorded when the task was placed near the Venice Beach boardwalk storefronts.</span>
+                  <span>Captured at the Venice Beach boardwalk when this task was placed.</span>
                   <div class="media-progress"></div>
                 </div>
               </section>
@@ -2654,18 +2657,18 @@
                 <div class="sheet-title-row">
                   <div>
                     <h4>Boardwalk Hunt</h4>
-                    <p>A replay captured when this AR task was placed at Venice Beach. It can also be replaced with a selfie or scene recording.</p>
+                    <p>Replay from the moment this task was placed at Venice Beach.</p>
                   </div>
                   <div class="sheet-status">Public</div>
                 </div>
                 <div class="sheet-stats">
                   <div class="sheet-stat"><b>1.2k</b><span>Views</span></div>
                   <div class="sheet-stat"><b>428</b><span>Likes</span></div>
-                  <div class="sheet-stat"><b>96</b><span>Acts</span></div>
+                  <div class="sheet-stat"><b>96</b><span>Interact</span></div>
                   <div class="sheet-stat"><b>24</b><span>Comments</span></div>
                 </div>
                 <div class="sheet-cta-row">
-                  <div class="sheet-cta primary">View Interactions</div>
+                  <div class="sheet-cta primary">Interactions</div>
                   <div class="sheet-cta">Share Task</div>
                 </div>
               </div>
@@ -2688,12 +2691,12 @@
                   <div class="media-glass">•••</div>
                 </div>
                 <div class="media-location">Venice Beach</div>
-                <div class="media-type-pill">Replay Compacting</div>
+                <div class="media-type-pill">Compacting</div>
                 <div class="media-anchor"></div>
                 <div class="media-play-dot">▶</div>
                 <div class="media-place-card">
                   <b>Placement Moment</b>
-                  <span>The media window is being compressed while keeping the place and replay identity visible.</span>
+                  <span>Media is folding upward while the place stays visible.</span>
                   <div class="media-progress"></div>
                 </div>
               </section>
@@ -2702,12 +2705,12 @@
                 <div class="compact-task-summary">
                   <div>
                     <h4>Boardwalk Hunt</h4>
-                    <p>The media window is folding upward as comments and interactions expand.</p>
+                    <p>Media folds up as interactions expand.</p>
                   </div>
                   <div class="sheet-status">Venice</div>
                 </div>
                 <div class="transition-note">
-                  <span>Media and detail sheet are merging</span>
+                  <span>Media and sheet are merging</span>
                   <span>Scrolling</span>
                 </div>
                 <div class="interaction-tabs" aria-label="Interaction filters after scrolling">
@@ -2721,7 +2724,7 @@
                     <div class="interaction-avatar"></div>
                     <div class="comment-body">
                       <b>Ava</b>
-                      The clue point is right beside the boardwalk storefront. The scan feedback feels clear.
+                      The clue point is beside the storefront. Scan feedback feels clear.
                       <span>3h · Reply</span>
                     </div>
                     <div class="comment-like">12</div>
@@ -2730,7 +2733,7 @@
                     <div class="interaction-avatar"></div>
                     <div class="comment-body">
                       <b>Mia</b>
-                      I finished the second anchor. Is the third one near the corner?
+                      Finished anchor two. Is the third near the corner?
                       <span>2h · Reply</span>
                     </div>
                     <div class="comment-like">8</div>
@@ -2783,7 +2786,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Ava</b>
-                    The clue point is right beside the boardwalk storefront. The scan feedback feels clear.
+                      The clue point is beside the storefront. Scan feedback feels clear.
                     <span>3h · Reply</span>
                   </div>
                   <div class="comment-like">12</div>
@@ -2792,7 +2795,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Mia</b>
-                    I finished the second anchor. Is the third one near the corner?
+                    Finished anchor two. Is the third near the corner?
                     <span>2h · Reply</span>
                   </div>
                   <div class="comment-like">8</div>
@@ -2810,7 +2813,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Nora</b>
-                    I want to see more AR tasks built for friends to play together.
+                    I want more AR tasks for friends to play together.
                     <span>Today · Reply</span>
                   </div>
                   <div class="comment-like">5</div>
