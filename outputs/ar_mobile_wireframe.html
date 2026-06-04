@@ -1590,6 +1590,292 @@
       font-size: 10px;
     }
 
+    .detail-cover {
+      position: relative;
+      height: 214px;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(60,60,67,0.08);
+      background:
+        radial-gradient(circle at 74% 20%, rgba(255,255,255,0.58), transparent 18%),
+        linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.08);
+    }
+
+    .detail-cover::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      right: -18%;
+      bottom: 18%;
+      height: 34%;
+      transform: rotate(-7deg);
+      background: rgba(28,28,30,0.12);
+      border-top: 1px solid rgba(255,255,255,0.42);
+    }
+
+    .detail-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, transparent 36%, rgba(0,0,0,0.42) 100%);
+    }
+
+    .detail-pin {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.66);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .detail-pin::before,
+    .detail-pin::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.62);
+    }
+
+    .detail-pin::before {
+      width: 22px;
+      height: 1px;
+    }
+
+    .detail-pin::after {
+      width: 1px;
+      height: 22px;
+    }
+
+    .detail-location {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 2;
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      font-size: 11px;
+      font-weight: 650;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .detail-cover-copy {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      color: white;
+    }
+
+    .detail-cover-copy h4 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .detail-cover-copy p {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .detail-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .detail-stat {
+      min-height: 54px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .detail-stat b {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .detail-stat span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .detail-info-card {
+      margin-top: 12px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(60,60,67,0.08);
+      background: rgba(255,255,255,0.88);
+    }
+
+    .detail-info-row {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+      border-bottom: 1px solid rgba(60,60,67,0.08);
+      font-size: 12px;
+    }
+
+    .detail-info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-info-row span:first-child {
+      color: var(--muted);
+    }
+
+    .detail-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .detail-action-button {
+      height: 38px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .detail-action-button.primary {
+      color: white;
+      background: var(--accent);
+      border-color: rgba(0,122,255,0.18);
+    }
+
+    .comment-summary {
+      border-radius: 22px;
+      padding: 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(60,60,67,0.08);
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .comment-task-cover {
+      width: 58px;
+      height: 72px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,0.52), transparent 18%),
+        linear-gradient(160deg, #8eb5ae 0%, #ccd2bf 48%, #7b876d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .comment-task-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 38%, rgba(0,0,0,0.34));
+    }
+
+    .comment-summary h4 {
+      margin: 0 0 5px;
+      font-size: 15px;
+    }
+
+    .comment-summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .comment-row {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .comment-row:last-child {
+      border-bottom: 0;
+    }
+
+    .comment-body {
+      color: #3a3a3c;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .comment-body b {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .comment-body span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .comment-like {
+      color: var(--muted);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .reply-bar {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 28px;
+      height: 44px;
+      border-radius: 999px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(60,60,67,0.1);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .reply-send {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
     .visibility-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -2262,6 +2548,142 @@
                 </div>
               </section>
 
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>8. AR 任务详情页</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR 任务详情页手机线框">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>任务详情</h3>
+                <div class="save-text">编辑</div>
+              </div>
+
+              <section class="detail-cover">
+                <div class="detail-location">南京路步行街</div>
+                <div class="detail-pin"></div>
+                <div class="detail-cover-copy">
+                  <h4>城市寻宝任务</h4>
+                  <p>在商圈的三个锚点寻找线索，完成后可解锁角色卡片动作。</p>
+                </div>
+              </section>
+
+              <div class="detail-stats">
+                <div class="detail-stat"><b>1.2k</b><span>浏览</span></div>
+                <div class="detail-stat"><b>428</b><span>点赞</span></div>
+                <div class="detail-stat"><b>96</b><span>互动</span></div>
+                <div class="detail-stat"><b>24</b><span>评论</span></div>
+              </div>
+
+              <section class="detail-info-card">
+                <div class="detail-info-row"><span>状态</span><strong>已发布 · 公开</strong></div>
+                <div class="detail-info-row"><span>范围</span><strong>附近可见 · 500m</strong></div>
+                <div class="detail-info-row"><span>玩法</span><strong>寻宝 / 打卡 / 合影</strong></div>
+              </section>
+
+              <div class="detail-actions">
+                <div class="detail-action-button primary">进入 AR 查看</div>
+                <div class="detail-action-button">分享任务</div>
+              </div>
+
+              <div class="section-title">
+                <span>最近反馈</span>
+                <span class="meta">查看全部</span>
+              </div>
+              <section class="interaction-list">
+                <div class="interaction-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="interaction-action">小陈 点赞了这个任务</div>
+                  <div class="interaction-time">2m</div>
+                </div>
+                <div class="interaction-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="interaction-action">阿树 评论：线索很好找</div>
+                  <div class="interaction-time">3h</div>
+                </div>
+              </section>
+
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>9. 评论 / 互动详情页</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="评论互动详情页手机线框">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>互动详情</h3>
+                <div></div>
+              </div>
+
+              <section class="comment-summary">
+                <div class="comment-task-cover"></div>
+                <div>
+                  <h4>城市寻宝任务</h4>
+                  <p>南京路步行街 · 24 条评论 · 96 次互动</p>
+                </div>
+              </section>
+
+              <div class="interaction-tabs" aria-label="评论互动筛选">
+                <div class="interaction-tab active">全部</div>
+                <div class="interaction-tab">评论</div>
+                <div class="interaction-tab">点赞</div>
+                <div class="interaction-tab">关注</div>
+              </div>
+
+              <section class="social-card">
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>阿树</b>
+                    这个线索点刚好在橱窗旁边，扫到之后反馈很明显。
+                    <span>3h · 回复</span>
+                  </div>
+                  <div class="comment-like">12</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Mia</b>
+                    我完成了第二个锚点，第三个是不是在街口？
+                    <span>2h · 回复</span>
+                  </div>
+                  <div class="comment-like">8</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Leo</b>
+                    开始关注你，并收藏了这个任务。
+                    <span>1h</span>
+                  </div>
+                  <div class="comment-like">关注</div>
+                </div>
+                <div class="comment-row">
+                  <div class="interaction-avatar"></div>
+                  <div class="comment-body">
+                    <b>Nora</b>
+                    想看更多这种适合朋友一起玩的 AR 任务。
+                    <span>今天 · 回复</span>
+                  </div>
+                  <div class="comment-like">5</div>
+                </div>
+              </section>
+
+              <div class="reply-bar">
+                <span>回复或补充任务提示...</span>
+                <span class="reply-send">发送</span>
+              </div>
               <div class="home-indicator dark"></div>
             </div>
           </div>
