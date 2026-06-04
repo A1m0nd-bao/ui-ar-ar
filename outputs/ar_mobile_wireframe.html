@@ -2112,6 +2112,103 @@
       background: linear-gradient(180deg, rgba(0,0,0,0.18), transparent 34%, rgba(0,0,0,0.18));
     }
 
+    .media-place-card {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 88px;
+      z-index: 3;
+      min-height: 72px;
+      padding: 12px 14px;
+      border-radius: 22px;
+      color: white;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.38);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+    }
+
+    .media-place-card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 1.1;
+    }
+
+    .media-place-card span {
+      display: block;
+      max-width: 236px;
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .media-place-card::after {
+      content: "00:12";
+      position: absolute;
+      right: 14px;
+      bottom: 13px;
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .media-progress {
+      position: absolute;
+      left: 14px;
+      right: 58px;
+      bottom: 13px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.22);
+      overflow: hidden;
+    }
+
+    .media-progress::after {
+      content: "";
+      display: block;
+      width: 42%;
+      height: 100%;
+      border-radius: inherit;
+      background: rgba(255,255,255,0.88);
+    }
+
+    .media-anchor {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      z-index: 2;
+      width: 86px;
+      height: 86px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.52);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 14px rgba(255,255,255,0.08), 0 22px 36px rgba(0,0,0,0.12);
+    }
+
+    .media-anchor::before,
+    .media-anchor::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .media-anchor::before {
+      width: 32px;
+      height: 2px;
+    }
+
+    .media-anchor::after {
+      width: 2px;
+      height: 32px;
+    }
+
     .media-topbar {
       position: absolute;
       left: 18px;
@@ -2221,11 +2318,11 @@
 
     .media-character {
       position: absolute;
-      left: 54%;
-      bottom: 78px;
+      left: 56%;
+      bottom: 172px;
       z-index: 2;
-      width: 74px;
-      height: 96px;
+      width: 70px;
+      height: 90px;
       transform: translateX(-50%);
       border-radius: 28px 28px 24px 24px;
       background:
@@ -2237,17 +2334,16 @@
 
     .media-play-dot {
       position: absolute;
-      left: 50%;
-      top: 50%;
+      right: 42px;
+      bottom: 112px;
       z-index: 3;
-      width: 50px;
-      height: 50px;
-      transform: translate(-50%, -50%);
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       color: white;
-      font-size: 18px;
+      font-size: 12px;
       background: rgba(28,28,30,0.34);
       border: 1px solid rgba(255,255,255,0.46);
       backdrop-filter: blur(18px);
@@ -2383,14 +2479,16 @@
     .media-detail-screen.transition .media-character {
       width: 46px;
       height: 62px;
-      bottom: 42px;
+      bottom: 104px;
       opacity: 0.58;
     }
 
     .media-detail-screen.transition .media-play-dot {
-      width: 36px;
-      height: 36px;
-      font-size: 13px;
+      width: 30px;
+      height: 30px;
+      right: 38px;
+      bottom: 76px;
+      font-size: 10px;
       opacity: 0.72;
     }
 
@@ -2416,6 +2514,28 @@
 
     .media-detail-screen.transition .transition-note {
       display: grid;
+    }
+
+    .media-detail-screen.transition .media-place-card {
+      bottom: 32px;
+      min-height: 58px;
+      transform: scale(0.84);
+      transform-origin: left bottom;
+      opacity: 0.78;
+    }
+
+    .media-detail-screen.transition .media-place-card span,
+    .media-detail-screen.transition .media-progress,
+    .media-detail-screen.transition .media-place-card::after {
+      display: none;
+    }
+
+    .media-detail-screen.transition .media-anchor {
+      width: 54px;
+      height: 54px;
+      top: 58%;
+      opacity: 0.56;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.07), 0 14px 26px rgba(0,0,0,0.1);
     }
 
     .transition-note {
@@ -2451,7 +2571,9 @@
     .media-detail-screen.compact .media-location,
     .media-detail-screen.compact .media-type-pill,
     .media-detail-screen.compact .media-character,
-    .media-detail-screen.compact .media-play-dot {
+    .media-detail-screen.compact .media-play-dot,
+    .media-detail-screen.compact .media-place-card,
+    .media-detail-screen.compact .media-anchor {
       display: none;
     }
 
@@ -3172,14 +3294,19 @@
               <section class="media-window">
                 <div class="media-topbar">
                   <div class="media-glass">‹</div>
-                  <div class="media-title">任务详情</div>
+                <div class="media-title">任务详情</div>
                   <div class="media-glass">•••</div>
                 </div>
                 <div class="media-location">南京路步行街</div>
                 <div class="media-type-pill">放置录屏</div>
-                <div class="media-reticle"></div>
+                <div class="media-anchor"></div>
                 <div class="media-character"></div>
                 <div class="media-play-dot">▶</div>
+                <div class="media-place-card">
+                  <b>放置时刻回放</b>
+                  <span>任务被放置在南京路步行街橱窗附近，画面来自发布时的录屏。</span>
+                  <div class="media-progress"></div>
+                </div>
               </section>
               <div class="media-info-sheet">
                 <div class="sheet-handle"></div>
@@ -3221,9 +3348,14 @@
                 </div>
                 <div class="media-location">南京路步行街</div>
                 <div class="media-type-pill">录屏压缩中</div>
-                <div class="media-reticle"></div>
+                <div class="media-anchor"></div>
                 <div class="media-character"></div>
                 <div class="media-play-dot">▶</div>
+                <div class="media-place-card">
+                  <b>放置时刻回放</b>
+                  <span>媒体窗口正在上收，保留地点与录屏识别信息。</span>
+                  <div class="media-progress"></div>
+                </div>
               </section>
               <div class="media-info-sheet">
                 <div class="sheet-handle"></div>
