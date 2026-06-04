@@ -1106,6 +1106,11 @@
       font-size: 15px;
     }
 
+    .comment-card {
+      min-height: 0;
+      padding-right: 14px;
+    }
+
     .mini-ar-card {
       position: absolute;
       right: 14px;
@@ -1653,12 +1658,19 @@
     }
 
     .comment-row {
+      position: relative;
       display: grid;
-      grid-template-columns: 36px 1fr auto;
-      gap: 10px;
+      grid-template-columns: 32px 1fr;
+      gap: 9px;
       align-items: start;
-      padding: 12px 0;
+      padding: 10px 42px 10px 0;
       border-bottom: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .comment-row .interaction-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
     }
 
     .comment-row:last-child {
@@ -1667,27 +1679,39 @@
 
     .comment-body {
       color: #3a3a3c;
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 11px;
+      line-height: 1.34;
     }
 
     .comment-body b {
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       color: var(--ink);
+      font-size: 12px;
     }
 
     .comment-body span {
       display: block;
-      margin-top: 5px;
+      margin-top: 4px;
       color: var(--muted);
-      font-size: 10px;
+      font-size: 9px;
     }
 
     .comment-like {
-      color: var(--muted);
-      font-size: 10px;
+      position: absolute;
+      right: 0;
+      top: 12px;
+      min-width: 28px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #6e6e73;
+      font-size: 9px;
       font-weight: 650;
+      background: rgba(242,242,247,0.9);
     }
 
     .reply-bar {
@@ -2719,12 +2743,12 @@
                   <div class="interaction-tab">Likes</div>
                   <div class="interaction-tab">Follows</div>
                 </div>
-                <section class="social-card">
+                <section class="social-card comment-card">
                   <div class="comment-row">
                     <div class="interaction-avatar"></div>
                     <div class="comment-body">
                       <b>Ava</b>
-                      The clue point is beside the storefront. Scan feedback feels clear.
+                      Clear scan near the storefront.
                       <span>3h · Reply</span>
                     </div>
                     <div class="comment-like">12</div>
@@ -2733,7 +2757,7 @@
                     <div class="interaction-avatar"></div>
                     <div class="comment-body">
                       <b>Mia</b>
-                      Finished anchor two. Is the third near the corner?
+                      Anchor two done. Third at the corner?
                       <span>2h · Reply</span>
                     </div>
                     <div class="comment-like">8</div>
@@ -2742,7 +2766,7 @@
                     <div class="interaction-avatar"></div>
                     <div class="comment-body">
                       <b>Leo</b>
-                      Followed you and saved this task.
+                      Followed you and saved it.
                       <span>1h</span>
                     </div>
                     <div class="comment-like">Follow</div>
@@ -2781,12 +2805,12 @@
                 <div class="interaction-tab">Follows</div>
               </div>
 
-              <section class="social-card">
+              <section class="social-card comment-card">
                 <div class="comment-row">
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Ava</b>
-                      The clue point is beside the storefront. Scan feedback feels clear.
+                      Clear scan near the storefront.
                     <span>3h · Reply</span>
                   </div>
                   <div class="comment-like">12</div>
@@ -2795,7 +2819,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Mia</b>
-                    Finished anchor two. Is the third near the corner?
+                    Anchor two done. Third at the corner?
                     <span>2h · Reply</span>
                   </div>
                   <div class="comment-like">8</div>
@@ -2804,7 +2828,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Leo</b>
-                    Followed you and saved this task.
+                    Followed you and saved it.
                     <span>1h</span>
                   </div>
                   <div class="comment-like">Follow</div>
@@ -2813,7 +2837,7 @@
                   <div class="interaction-avatar"></div>
                   <div class="comment-body">
                     <b>Nora</b>
-                    I want more AR tasks for friends to play together.
+                    More friend tasks like this.
                     <span>Today · Reply</span>
                   </div>
                   <div class="comment-like">5</div>
