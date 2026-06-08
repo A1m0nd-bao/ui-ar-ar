@@ -989,6 +989,7 @@
     .social-profile-hero {
       position: relative;
       overflow: hidden;
+      contain: paint;
       min-height: 252px;
       border-radius: 26px;
       padding: 18px;
@@ -1019,6 +1020,11 @@
       grid-template-columns: 88px 1fr;
       gap: 14px;
       align-items: center;
+      min-width: 0;
+    }
+
+    .profile-identity > div:last-child {
+      min-width: 0;
     }
 
     .profile-name {
@@ -1031,6 +1037,7 @@
       color: #3f4b50;
       font-size: 12px;
       line-height: 1.45;
+      overflow-wrap: anywhere;
     }
 
     .profile-badges {
@@ -2728,6 +2735,7 @@
       position: absolute;
       inset: 0;
       overflow: hidden;
+      contain: paint;
       background:
         linear-gradient(180deg, rgba(20,20,22,0.03), rgba(20,20,22,0.26)),
         radial-gradient(circle at 70% 18%, rgba(255,255,255,0.56), transparent 18%),
@@ -3125,6 +3133,231 @@
       font-size: 9px;
       font-weight: 800;
       background: rgba(255,255,255,0.9);
+    }
+
+    .identity-preview-card {
+      position: relative;
+      overflow: hidden;
+      contain: paint;
+      min-height: 210px;
+      border-radius: 26px;
+      padding: 16px;
+      color: white;
+      background:
+        radial-gradient(circle at 74% 18%, rgba(255,255,255,0.58), transparent 22%),
+        linear-gradient(145deg, #8eb5ae 0%, #c3d0ca 42%, #8c957c 100%);
+      border: 1px solid rgba(60,60,67,0.08);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.1);
+    }
+
+    .identity-preview-card::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      right: -18%;
+      bottom: 14%;
+      height: 32%;
+      transform: rotate(-7deg);
+      background: rgba(28,28,30,0.14);
+      border-top: 1px solid rgba(255,255,255,0.32);
+    }
+
+    .identity-preview-head {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr) 42px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .identity-core {
+      position: relative;
+      width: 74px;
+      height: 74px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(255,255,255,0.92), transparent 20%),
+        radial-gradient(circle at 72% 68%, rgba(255,177,92,0.76), transparent 24%),
+        linear-gradient(145deg, rgba(74,166,160,0.94), rgba(29,84,88,0.9));
+      border: 1px solid rgba(255,255,255,0.56);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.14);
+    }
+
+    .identity-core::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.64);
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.12);
+    }
+
+    .identity-preview-copy b {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 17px;
+    }
+
+    .identity-preview-copy span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 11px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .identity-rating-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: #1d1d1f;
+      font-size: 15px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.72);
+    }
+
+    .identity-preview-tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 26px;
+    }
+
+    .identity-preview-tags span {
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.92);
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(28,28,30,0.28);
+      border: 1px solid rgba(255,255,255,0.36);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .identity-edit-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .identity-edit-row {
+      min-height: 54px;
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 10px;
+      border-radius: 17px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .identity-edit-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      background: linear-gradient(145deg, #4aa6a0, #1d5458);
+    }
+
+    .identity-edit-row b {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    .identity-edit-row span {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.25;
+    }
+
+    .nfc-exchange-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 236px;
+      border-radius: 26px;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 50% 36%, rgba(0,122,255,0.14), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,0.94), rgba(232,239,237,0.9));
+      border: 1px solid rgba(60,60,67,0.08);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.08);
+    }
+
+    .nfc-exchange-ring {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 170px;
+      height: 170px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(60,60,67,0.12);
+      box-shadow: 0 0 0 22px rgba(255,255,255,0.42);
+    }
+
+    .nfc-exchange-card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 120px;
+      height: 82px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 18px 32px rgba(0,0,0,0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nfc-exchange-card.me {
+      transform: translate(-82%, -48%) rotate(-8deg);
+    }
+
+    .nfc-exchange-card.other {
+      transform: translate(-18%, -28%) rotate(7deg);
+      background: rgba(28,28,30,0.44);
+    }
+
+    .nfc-exchange-copy {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .nfc-exchange-copy h4 {
+      margin: 0 0 5px;
+      font-size: 17px;
+    }
+
+    .nfc-exchange-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
     }
 
     .notes {
@@ -3868,41 +4101,53 @@
         <h2>11. AR 社交名片 / 立体身份</h2>
         <div class="phone-wrap">
           <div class="phone" aria-label="AR 社交名片立体身份手机线框">
-            <div class="loci-ar-card-screen">
-              <div class="privacy-dot"></div>
-              <div class="loci-topbar">
-                <div class="media-glass">‹</div>
-                <div class="loci-title">AR 社交名片</div>
-                <div class="media-glass">•••</div>
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>AR 名片</h3>
+                <div class="save-text">预览</div>
               </div>
-              <div class="loci-card-orbit">
-                <div class="loci-identity-object"></div>
-              </div>
-              <div class="loci-layer-chip a">城市探索者</div>
-              <div class="loci-layer-chip b">夜间活跃</div>
-              <div class="loci-layer-chip c">展览 / 咖啡 / 游戏</div>
 
-              <section class="loci-card-sheet">
-                <div class="loci-card-head">
-                  <div>
-                    <h4>我的 Loci 身份</h4>
-                    <p>用形象、地点、兴趣、生活习惯和 AR 行为共同塑造一个立体的人。</p>
+              <section class="identity-preview-card">
+                <div class="identity-preview-head">
+                  <div class="identity-core"></div>
+                  <div class="identity-preview-copy">
+                    <b>我的 Loci 身份</b>
+                    <span>用形象、地点、兴趣、习惯和 AR 行为共同塑造立体的人。</span>
                   </div>
-                  <div class="loci-rating"><b>A+</b><span>Loci 评级</span></div>
+                  <div class="identity-rating-badge">A+</div>
                 </div>
-                <div class="loci-profile-grid">
-                  <div class="loci-profile-cell"><b>去过</b><span>滨江、展馆、夜市、校园</span></div>
-                  <div class="loci-profile-cell"><b>偏好</b><span>轻探索、拍摄、收藏路线</span></div>
-                  <div class="loci-profile-cell"><b>风格</b><span>观察者 / 低频主动社交</span></div>
-                </div>
-                <div class="loci-pill-row">
-                  <div class="loci-pill">默认形象</div>
-                  <div class="loci-pill">AR 任务痕迹</div>
-                  <div class="loci-pill">公开展示槽</div>
-                  <div class="loci-pill">可见性可控</div>
+                <div class="identity-preview-tags">
+                  <span>城市探索者</span>
+                  <span>夜间活跃</span>
+                  <span>展览 / 咖啡</span>
+                  <span>AR 任务痕迹</span>
                 </div>
               </section>
-              <div class="home-indicator"></div>
+
+              <div class="section-title">
+                <span>立体信息层</span>
+                <span class="meta">可见性可控</span>
+              </div>
+              <section class="identity-edit-list">
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">形</div>
+                  <div><b>Loci 形象</b><span>抽象身份物、动作、材质与默认展示姿态</span></div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">评</div>
+                  <div><b>系统评级</b><span>探索者、观察者、路线收藏等可解释标签</span></div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">迹</div>
+                  <div><b>地点与习惯</b><span>去过的地方、常去时段、兴趣和生活方式</span></div>
+                  <span class="chevron">›</span>
+                </div>
+              </section>
+              <p class="page-note">这里是编辑和预览 AR 名片的功能页；真正的展示仍会在 AR 场景、NFC 交换或空间信号中发生。</p>
+              <div class="home-indicator dark"></div>
             </div>
           </div>
         </div>
@@ -3951,40 +4196,48 @@
         <h2>13. NFC 快速交换 / 弱社交推进</h2>
         <div class="phone-wrap">
           <div class="phone" aria-label="NFC 快速获取 AR 社交名片手机线框">
-            <div class="loci-ar-card-screen">
-              <div class="privacy-dot"></div>
-              <div class="loci-topbar">
-                <div class="media-glass">‹</div>
-                <div class="loci-title">NFC 名片交换</div>
-                <div class="media-glass">•••</div>
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>NFC 交换</h3>
+                <div></div>
               </div>
-              <div class="nfc-ring">
-                <div class="nfc-card-pair">
-                  <div class="nfc-mini-card"></div>
-                  <div class="nfc-mini-card"></div>
-                </div>
-              </div>
-              <section class="loci-card-sheet">
-                <div class="loci-card-head">
+
+              <section class="nfc-exchange-panel">
+                <div class="nfc-exchange-ring"></div>
+                <div class="nfc-exchange-card me"></div>
+                <div class="nfc-exchange-card other"></div>
+                <div class="nfc-exchange-copy">
                   <div>
-                    <h4>轻触获取 AR 名片</h4>
-                    <p>现实社交场合中，通过 NFC 快速交换精简名片，让弱关系多一步自然话题。</p>
+                    <h4>轻触交换精简名片</h4>
+                    <p>用于活动、展会、校园等弱社交场合，不强制加好友。</p>
                   </div>
                   <div class="loci-rating"><b>NFC</b><span>轻触</span></div>
                 </div>
-                <div class="loci-profile-grid">
-                  <div class="loci-profile-cell"><b>先展示</b><span>形象、评级、兴趣摘要</span></div>
-                  <div class="loci-profile-cell"><b>再选择</b><span>关注、收藏、发起话题</span></div>
-                  <div class="loci-profile-cell"><b>可撤回</b><span>交换记录与可见权限</span></div>
+              </section>
+
+              <div class="section-title">
+                <span>交换后动作</span>
+                <span class="meta">轻社交</span>
+              </div>
+              <section class="identity-edit-list">
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">看</div>
+                  <div><b>查看精简名片</b><span>先展示形象、评级、兴趣摘要与共同点</span></div>
+                  <span class="chevron">›</span>
                 </div>
-                <div class="loci-pill-row">
-                  <div class="loci-pill">精简名片</div>
-                  <div class="loci-pill">话题提示</div>
-                  <div class="loci-pill">场合模式</div>
-                  <div class="loci-pill">不强制加好友</div>
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">聊</div>
+                  <div><b>生成话题提示</b><span>AI 从共同地点、兴趣、AR 任务里给破冰点</span></div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="identity-edit-row">
+                  <div class="identity-edit-icon">隐</div>
+                  <div><b>撤回与权限</b><span>交换记录、可见字段和后续关注都可控制</span></div>
+                  <span class="chevron">›</span>
                 </div>
               </section>
-              <div class="home-indicator"></div>
+              <div class="home-indicator dark"></div>
             </div>
           </div>
         </div>
