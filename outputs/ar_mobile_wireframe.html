@@ -2724,6 +2724,409 @@
       margin-bottom: 3px;
     }
 
+    .loci-ar-card-screen {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(20,20,22,0.03), rgba(20,20,22,0.26)),
+        radial-gradient(circle at 70% 18%, rgba(255,255,255,0.56), transparent 18%),
+        linear-gradient(135deg, #8eb5ae 0%, #c3d0ca 38%, #d0c5aa 62%, #7f8b73 100%);
+      color: white;
+    }
+
+    .loci-ar-card-screen::before {
+      content: "";
+      position: absolute;
+      left: -28%;
+      right: -28%;
+      bottom: 18%;
+      height: 30%;
+      transform: rotate(-7deg);
+      background: rgba(54,66,61,0.2);
+      border-top: 2px solid rgba(255,255,255,0.28);
+    }
+
+    .loci-topbar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 64px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+    }
+
+    .loci-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.22);
+    }
+
+    .loci-card-orbit {
+      position: absolute;
+      left: 50%;
+      top: 32%;
+      z-index: 2;
+      width: 190px;
+      height: 190px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.32);
+      box-shadow: 0 0 0 22px rgba(255,255,255,0.06), 0 28px 52px rgba(0,0,0,0.13);
+    }
+
+    .loci-identity-object {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 116px;
+      height: 116px;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(255,255,255,0.92), transparent 20%),
+        radial-gradient(circle at 72% 68%, rgba(255,177,92,0.76), transparent 24%),
+        linear-gradient(145deg, rgba(74,166,160,0.94), rgba(29,84,88,0.9));
+      border: 1px solid rgba(255,255,255,0.48);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 22px 40px rgba(0,0,0,0.18);
+    }
+
+    .loci-identity-object::before,
+    .loci-identity-object::after {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+    }
+
+    .loci-identity-object::before {
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,0.44);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .loci-identity-object::after {
+      left: 50%;
+      top: 50%;
+      width: 34px;
+      height: 34px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.64);
+      box-shadow: 0 0 0 12px rgba(255,255,255,0.12);
+    }
+
+    .loci-layer-chip {
+      position: absolute;
+      z-index: 3;
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.94);
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(28,28,30,0.3);
+      border: 1px solid rgba(255,255,255,0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .loci-layer-chip.a { left: 28px; top: 178px; }
+    .loci-layer-chip.b { right: 26px; top: 222px; }
+    .loci-layer-chip.c { left: 42px; top: 310px; }
+
+    .loci-card-sheet {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 24px;
+      z-index: 4;
+      border-radius: 28px;
+      padding: 14px;
+      color: var(--ink);
+      background: rgba(248,248,250,0.92);
+      border: 1px solid rgba(255,255,255,0.72);
+      backdrop-filter: blur(26px) saturate(170%);
+      -webkit-backdrop-filter: blur(26px) saturate(170%);
+      box-shadow: 0 -18px 36px rgba(0,0,0,0.13);
+    }
+
+    .loci-card-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .loci-card-head h4 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .loci-card-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .loci-rating {
+      min-width: 66px;
+      height: 46px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      color: white;
+      background: linear-gradient(145deg, #2c2c2e, #4b5960);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+
+    .loci-rating b {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .loci-rating span {
+      margin-top: 3px;
+      font-size: 8px;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .loci-profile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .loci-profile-cell {
+      min-height: 56px;
+      border-radius: 16px;
+      padding: 9px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .loci-profile-cell b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    .loci-profile-cell span {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.25;
+    }
+
+    .loci-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .loci-pill {
+      height: 26px;
+      padding: 0 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #3a3a3c;
+      font-size: 10px;
+      font-weight: 650;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,60,67,0.08);
+    }
+
+    .loci-signal-card {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 116px;
+      z-index: 4;
+      border-radius: 28px;
+      padding: 16px;
+      color: var(--ink);
+      background: rgba(248,248,250,0.92);
+      border: 1px solid rgba(255,255,255,0.72);
+      backdrop-filter: blur(26px) saturate(170%);
+      -webkit-backdrop-filter: blur(26px) saturate(170%);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.14);
+    }
+
+    .haptic-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 18px;
+      background: #1d1d1f;
+      box-shadow: 0 0 0 10px rgba(29,29,31,0.08), 0 18px 28px rgba(0,0,0,0.16);
+    }
+
+    .signal-title-row {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .signal-title-row h4 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+
+    .signal-title-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .match-stack {
+      display: grid;
+      gap: 7px;
+    }
+
+    .match-row {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,60,67,0.08);
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    .match-row span {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 10px;
+    }
+
+    .nfc-ring {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      z-index: 2;
+      width: 218px;
+      height: 218px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: radial-gradient(circle, rgba(255,255,255,0.16), rgba(255,255,255,0.05) 48%, transparent 49%);
+      box-shadow: 0 0 0 28px rgba(255,255,255,0.06);
+    }
+
+    .nfc-card-pair {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 172px;
+      height: 112px;
+      transform: translate(-50%, -50%);
+    }
+
+    .nfc-mini-card {
+      position: absolute;
+      width: 108px;
+      height: 78px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(255,255,255,0.76);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nfc-mini-card:first-child {
+      left: 0;
+      top: 0;
+      transform: rotate(-9deg);
+    }
+
+    .nfc-mini-card:last-child {
+      right: 0;
+      bottom: 0;
+      transform: rotate(8deg);
+      background: rgba(28,28,30,0.42);
+    }
+
+    .premium-rack {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .premium-item {
+      position: relative;
+      min-height: 82px;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 10px;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 18%, rgba(255,255,255,0.48), transparent 24%),
+        linear-gradient(145deg, #3d5962, #8eb5ae 52%, #c2b28f);
+      border: 1px solid rgba(255,255,255,0.42);
+    }
+
+    .premium-item:nth-child(2) {
+      background:
+        radial-gradient(circle at 24% 18%, rgba(255,255,255,0.5), transparent 26%),
+        linear-gradient(145deg, #2c2c2e, #7f89a3 52%, #d0c5aa);
+    }
+
+    .premium-item:nth-child(3) {
+      background:
+        radial-gradient(circle at 70% 28%, rgba(255,255,255,0.44), transparent 24%),
+        linear-gradient(145deg, #1d5458, #4aa6a0 52%, #ffb15c);
+    }
+
+    .premium-item b {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .premium-item span {
+      display: block;
+      color: rgba(255,255,255,0.74);
+      font-size: 9px;
+      line-height: 1.25;
+    }
+
+    .premium-price {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #1d1d1f;
+      font-size: 9px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.9);
+    }
+
     .notes {
       margin-top: 28px;
       display: grid;
@@ -3460,40 +3863,204 @@
           </div>
         </div>
       </article>
+
+      <article class="board">
+        <h2>11. AR 社交名片 / 立体身份</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR 社交名片立体身份手机线框">
+            <div class="loci-ar-card-screen">
+              <div class="privacy-dot"></div>
+              <div class="loci-topbar">
+                <div class="media-glass">‹</div>
+                <div class="loci-title">AR 社交名片</div>
+                <div class="media-glass">•••</div>
+              </div>
+              <div class="loci-card-orbit">
+                <div class="loci-identity-object"></div>
+              </div>
+              <div class="loci-layer-chip a">城市探索者</div>
+              <div class="loci-layer-chip b">夜间活跃</div>
+              <div class="loci-layer-chip c">展览 / 咖啡 / 游戏</div>
+
+              <section class="loci-card-sheet">
+                <div class="loci-card-head">
+                  <div>
+                    <h4>我的 Loci 身份</h4>
+                    <p>用形象、地点、兴趣、生活习惯和 AR 行为共同塑造一个立体的人。</p>
+                  </div>
+                  <div class="loci-rating"><b>A+</b><span>Loci 评级</span></div>
+                </div>
+                <div class="loci-profile-grid">
+                  <div class="loci-profile-cell"><b>去过</b><span>滨江、展馆、夜市、校园</span></div>
+                  <div class="loci-profile-cell"><b>偏好</b><span>轻探索、拍摄、收藏路线</span></div>
+                  <div class="loci-profile-cell"><b>风格</b><span>观察者 / 低频主动社交</span></div>
+                </div>
+                <div class="loci-pill-row">
+                  <div class="loci-pill">默认形象</div>
+                  <div class="loci-pill">AR 任务痕迹</div>
+                  <div class="loci-pill">公开展示槽</div>
+                  <div class="loci-pill">可见性可控</div>
+                </div>
+              </section>
+              <div class="home-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>12. 空间相似信号 / 轻社交触发</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="空间相似信号手机线框">
+            <div class="loci-ar-card-screen">
+              <div class="privacy-dot"></div>
+              <div class="loci-topbar">
+                <div class="media-glass">‹</div>
+                <div class="loci-title">AR 空间信号</div>
+                <div class="media-glass">•••</div>
+              </div>
+              <div class="placement-reticle"></div>
+              <div class="loci-layer-chip a">附近有相似 Loci</div>
+              <div class="loci-layer-chip b">相似度 82%</div>
+              <section class="loci-signal-card">
+                <div class="signal-title-row">
+                  <div class="haptic-dot">⌁</div>
+                  <div>
+                    <h4>咔哒一下的空间提醒</h4>
+                    <p>路过与自己 AR 标签相近的放置物或用户时，以克制触感提示，不打断现实活动。</p>
+                  </div>
+                </div>
+                <div class="match-stack">
+                  <div class="match-row">相似原因：城市探索 / 夜间路线<span>AI 解释</span></div>
+                  <div class="match-row">可执行动作：查看名片 / 留下回应<span>轻动作</span></div>
+                  <div class="match-row">默认策略：只提示，不自动暴露身份<span>隐私优先</span></div>
+                </div>
+              </section>
+              <div class="bottom-tray">
+                <div class="bottom-control"><div class="glass-button explore-floating">⌖</div><div class="control-label">探索</div></div>
+                <div class="bottom-control"><div class="glass-button center-add">+</div><div class="control-label">AR</div></div>
+                <div class="bottom-control"><div class="glass-button my-floating">●</div><div class="control-label">我的</div></div>
+              </div>
+              <div class="home-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>13. NFC 快速交换 / 弱社交推进</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="NFC 快速获取 AR 社交名片手机线框">
+            <div class="loci-ar-card-screen">
+              <div class="privacy-dot"></div>
+              <div class="loci-topbar">
+                <div class="media-glass">‹</div>
+                <div class="loci-title">NFC 名片交换</div>
+                <div class="media-glass">•••</div>
+              </div>
+              <div class="nfc-ring">
+                <div class="nfc-card-pair">
+                  <div class="nfc-mini-card"></div>
+                  <div class="nfc-mini-card"></div>
+                </div>
+              </div>
+              <section class="loci-card-sheet">
+                <div class="loci-card-head">
+                  <div>
+                    <h4>轻触获取 AR 名片</h4>
+                    <p>现实社交场合中，通过 NFC 快速交换精简名片，让弱关系多一步自然话题。</p>
+                  </div>
+                  <div class="loci-rating"><b>NFC</b><span>轻触</span></div>
+                </div>
+                <div class="loci-profile-grid">
+                  <div class="loci-profile-cell"><b>先展示</b><span>形象、评级、兴趣摘要</span></div>
+                  <div class="loci-profile-cell"><b>再选择</b><span>关注、收藏、发起话题</span></div>
+                  <div class="loci-profile-cell"><b>可撤回</b><span>交换记录与可见权限</span></div>
+                </div>
+                <div class="loci-pill-row">
+                  <div class="loci-pill">精简名片</div>
+                  <div class="loci-pill">话题提示</div>
+                  <div class="loci-pill">场合模式</div>
+                  <div class="loci-pill">不强制加好友</div>
+                </div>
+              </section>
+              <div class="home-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="board">
+        <h2>14. 名片装修 / 付费表达</h2>
+        <div class="phone-wrap">
+          <div class="phone" aria-label="AR 社交名片装修付费手机线框">
+            <div class="my-screen">
+              <div class="top-nav">
+                <div class="small-icon">‹</div>
+                <h3>名片装修</h3>
+                <div class="save-text">完成</div>
+              </div>
+
+              <section class="social-profile-hero">
+                <div class="profile-identity">
+                  <div class="avatar large"></div>
+                  <div>
+                    <div class="profile-name">Loci Nitro</div>
+                    <div class="profile-bio">像 Discord Nitro / Steam 点数商店一样，付费购买表达自己的方式。</div>
+                  </div>
+                </div>
+                <div class="profile-badges">
+                  <span class="profile-chip">动态卡面</span>
+                  <span class="profile-chip">展示槽位 +2</span>
+                </div>
+              </section>
+
+              <div class="section-title">
+                <span>可购买装饰</span>
+                <span class="meta">AR first</span>
+              </div>
+              <div class="premium-rack">
+                <div class="premium-item"><b>玻璃卡面</b><span>材质、边框、光照动画</span><div class="premium-price">600 点</div></div>
+                <div class="premium-item"><b>入场特效</b><span>别人打开名片时的 AR 展示</span><div class="premium-price">900 点</div></div>
+                <div class="premium-item"><b>形象配件</b><span>Loci 形象服饰与动作</span><div class="premium-price">480 点</div></div>
+                <div class="premium-item"><b>展示槽</b><span>地点、徽章、路线收藏</span><div class="premium-price">会员</div></div>
+              </div>
+              <p class="page-note">付费点不直接售卖“认识更多人”，而是售卖更立体、更高级的自我表达和 AR 展示质感。</p>
+              <div class="home-indicator dark"></div>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
 
     <section class="notes">
       <article class="note-panel">
-        <h2>你可能遗漏的功能点</h2>
+        <h2>Loci 后续社交动作大纲</h2>
         <ul>
-          <li>AR 权限与引导：首次打开需要相机权限、运动传感器权限、空间扫描教学。</li>
-          <li>识别状态：未识别平面、识别中、可放置、丢失追踪、光线过暗、距离过近。</li>
-          <li>任务入口：添加按钮里建议拆成角色、任务、道具、扫描码或导入链接。</li>
-          <li>综合按键：主界面只呈现为干净圆点；添加物体、录制、拍摄等扩展动作建议在新手引导中讲清楚。</li>
-          <li>底部三段式：探索、综合、我的属于同一组模式切换，需要用统一容器框住，避免看起来像三个无关按钮。</li>
-          <li>探索入口：左侧入口用于发现附近内容、推荐任务、扫描可互动对象，不再承担记录功能。</li>
-          <li>状态窗口：平常隐藏，只在空间识别、资源加载、权限异常、追踪丢失等情况短暂弹出。</li>
-          <li>焦距调节：建议做成按住综合按键上方并左右滑出的扇形临时控件，松手即收起。</li>
-          <li>场景预览：小窗里建议同时表达地点、环境缩略画面、AR 锚点/任务气息，而不是只放一张普通图片。</li>
-          <li>锚点管理：已放置内容需要重命名、移动、隐藏、删除、重新定位。</li>
-          <li>安全退出：AR 页面返回时提示是否保存本次放置和记录，避免用户误关丢失。</li>
-          <li>弱网与离线：角色资源、任务配置、历史记录需要加载态和失败重试。</li>
-          <li>隐私：我的页建议有隐私设置、数据清除、相册/定位/相机权限管理入口。</li>
+          <li>产品定调：Loci 是以 AR 为主的交互轻社交软件，用户第一动力应该是进入现实世界的 AR 图层，而不是刷资料或匹配好友。</li>
+          <li>AR 社交名片：名片不是普通资料卡，而是“立体身份容器”，由 Loci 形象、评级、地点足迹、兴趣、生活习惯、AR 行为痕迹共同组成。</li>
+          <li>评级系统：评级不只是分数，应能解释用户气质，例如探索者、创作者、观察者、夜间活跃、地点收藏者等，并服务于 AR 场景触发。</li>
+          <li>空间发现：路过相似 AR 标签、放置物或用户时，用轻触感提醒用户附近有与自己相关的空间信号，社交从 AR 发现自然长出来。</li>
+          <li>NFC 交换：现实弱社交场合通过轻触交换精简 AR 名片，降低尴尬，让对方快速理解“这个人有什么立体特征”。</li>
+          <li>AI 角色：AI 不应该变成普通推荐算法，而应解释“为什么这个地点、任务、人和我有关”，并帮助生成更立体的名片内容。</li>
+          <li>付费策略：参考 Discord Nitro 和 Steam 点数商店，卖的是更高级的自我表达、AR 展示质感和名片装修能力，而不是直接卖社交关系。</li>
+          <li>隐私边界：空间提醒和 NFC 交换都要默认克制，用户可以选择展示范围、撤回交换记录、隐藏某些标签或地点。</li>
         </ul>
       </article>
 
       <article class="note-panel">
-        <h2>建议的 MVP 流程</h2>
+        <h2>AR First 设计原则</h2>
         <div class="flow">
-          <div class="flow-step"><b>打开 AR</b>授权相机，进入扫描状态。</div>
-          <div class="flow-step"><b>识别空间</b>出现可放置区域和轻提示。</div>
-          <div class="flow-step"><b>添加内容</b>选择角色、任务或道具并放置。</div>
-          <div class="flow-step"><b>记录 / 管理</b>拍照保存，回到我的页查看任务。</div>
+          <div class="flow-step"><b>打开 Loci</b>默认进入 AR，而不是资料页或信息流。</div>
+          <div class="flow-step"><b>看到信号</b>地点、任务、名片、AI 提示先在空间里出现。</div>
+          <div class="flow-step"><b>轻量互动</b>查看名片、留下回应、收藏地点、NFC 交换。</div>
+          <div class="flow-step"><b>沉淀身份</b>行为回流到 AR 名片和 Loci 评级系统。</div>
         </div>
         <ul style="margin-top: 16px;">
-          <li>交互优先级：画面中心只放 AR 对象和必要提示，工具按钮默认收敛到边缘。</li>
-          <li>“更多”里可收纳闪光灯、网格、声音、教程、问题反馈，降低主界面压力。</li>
-          <li>我的页可以先做三块：个人信息、自定义角色、放置过的任务，后续再加成就与商城。</li>
+          <li>社交入口不要压过 AR 入口；人和关系应该被“空间信号”召唤出来，而不是作为首页主内容。</li>
+          <li>名片展示要强调立体感：视觉上的 AR 形象立体，信息上的人格与经历也要立体。</li>
+          <li>轻社交动作要围绕认同感：相似标签、共同地点、相似路线、相似兴趣、共同参与过的 AR 任务。</li>
+          <li>后续可以补充的名片信息：创作偏好、常去时段、城市路线、收藏主题、社交边界、公开愿望、最近沉迷、AI 个性摘要。</li>
         </ul>
       </article>
     </section>
